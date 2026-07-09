@@ -1,0 +1,440 @@
+// Single source of truth for Besot's legal documents.
+// Content mirrors the in-app text exactly (lib/l10n/app_en.arb) so the hosted
+// pages, the Markdown copies, and the app stay perfectly consistent.
+
+export const APP_NAME = "Besot"
+export const PUBLISHER = "DevCast Solutions"
+export const EFFECTIVE_DATE = "July 9, 2026"
+export const PRIVACY_EMAIL = "privacy@besot.app"
+export const SUPPORT_EMAIL = "support@besot.app"
+
+export type Block =
+  | { type: "p"; text: string }
+  | { type: "lead"; text: string }
+  | { type: "list"; items: string[] }
+
+export type Section = {
+  id: string
+  heading: string
+  blocks: Block[]
+}
+
+export type LegalDoc = {
+  slug: string
+  title: string
+  summary: string
+  sections: Section[]
+}
+
+export const privacyPolicy: LegalDoc = {
+  slug: "privacy-policy",
+  title: "Privacy Policy",
+  summary:
+    "How Besot collects, uses, and protects your information as an anonymous community platform.",
+  sections: [
+    {
+      id: "introduction",
+      heading: "Introduction",
+      blocks: [
+        {
+          type: "p",
+          text: 'Besot ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our mobile application. Please read this policy carefully.',
+        },
+      ],
+    },
+    {
+      id: "information-we-collect",
+      heading: "Information We Collect",
+      blocks: [
+        { type: "lead", text: "We collect:" },
+        {
+          type: "list",
+          items: [
+            "Account Information: Nickname (anonymous identifier), encrypted PIN, and optional recovery email.",
+            "User Content: Posts, comments, reactions, and any images you choose to share.",
+            "Usage Data: App interactions, feature usage, and preferences.",
+            "Device Information: Device type, operating system, and unique device identifiers for security purposes.",
+            "Log Data: IP addresses, access times, and pages viewed (stored temporarily for security).",
+          ],
+        },
+      ],
+    },
+    {
+      id: "how-we-use-your-information",
+      heading: "How We Use Your Information",
+      blocks: [
+        { type: "lead", text: "We use your information to:" },
+        {
+          type: "list",
+          items: [
+            "Provide and maintain the App's functionality",
+            "Enable communication and content sharing",
+            "Improve and personalize your experience",
+            "Ensure community safety and enforce guidelines",
+            "Send important notifications about your account",
+            "Analyze usage patterns to improve the service",
+            "Prevent fraud and maintain security",
+          ],
+        },
+      ],
+    },
+    {
+      id: "anonymity-protection",
+      heading: "Anonymity Protection",
+      blocks: [
+        { type: "lead", text: "Besot is designed with anonymity as a core principle:" },
+        {
+          type: "list",
+          items: [
+            "Your real name is never required or stored",
+            "Your nickname is your only identifier",
+            "Posts can be made completely anonymous",
+            "We do not link your account to real-world identity",
+            "IP addresses are not permanently stored with content",
+          ],
+        },
+      ],
+    },
+    {
+      id: "data-storage-and-security",
+      heading: "Data Storage and Security",
+      blocks: [
+        {
+          type: "lead",
+          text: "We implement industry-standard security measures to protect your information:",
+        },
+        {
+          type: "list",
+          items: [
+            "All data is encrypted in transit and at rest",
+            "PINs are hashed and cannot be read by anyone",
+            "Regular security audits and updates",
+            "Access controls limit who can view data",
+            "Secure cloud infrastructure with redundancy",
+          ],
+        },
+      ],
+    },
+    {
+      id: "data-sharing",
+      heading: "Data Sharing",
+      blocks: [
+        { type: "lead", text: "We do not sell your personal information. We may share data only:" },
+        {
+          type: "list",
+          items: [
+            "With service providers who assist in operating the App",
+            "When required by law or legal process",
+            "To protect the rights, safety, or property of users",
+            "In connection with a merger or acquisition (with notice)",
+            "With your explicit consent",
+          ],
+        },
+      ],
+    },
+    {
+      id: "your-rights",
+      heading: "Your Rights",
+      blocks: [
+        { type: "lead", text: "You have the right to:" },
+        {
+          type: "list",
+          items: [
+            "Access your personal data",
+            "Correct inaccurate information",
+            "Delete your account and associated data",
+            "Export your data in a portable format",
+            "Opt out of non-essential communications",
+            "Withdraw consent at any time",
+          ],
+        },
+      ],
+    },
+    {
+      id: "childrens-privacy",
+      heading: "Children's Privacy",
+      blocks: [
+        {
+          type: "p",
+          text: "Besot is not intended for users under 18 years of age. We do not knowingly collect personal information from children. If we discover that a child has provided us with personal information, we will delete such information from our systems immediately.",
+        },
+      ],
+    },
+    {
+      id: "contact-us",
+      heading: "Contact Us",
+      blocks: [
+        {
+          type: "p",
+          text: "If you have questions or concerns about this Privacy Policy, please contact us at:",
+        },
+        { type: "p", text: `Email: ${PRIVACY_EMAIL}` },
+        { type: "p", text: "We aim to respond to all inquiries within 30 days." },
+      ],
+    },
+  ],
+}
+
+export const termsOfService: LegalDoc = {
+  slug: "terms",
+  title: "Terms of Service",
+  summary:
+    "The conditions you agree to when registering for and using Besot, including eligibility and account responsibilities.",
+  sections: [
+    {
+      id: "acceptance-of-terms",
+      heading: "1. Acceptance of Terms",
+      blocks: [
+        {
+          type: "p",
+          text: 'By accessing or using Besot (the "App"), you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use the App. Besot is an anonymous community platform designed to provide a safe space for sharing thoughts, experiences, and seeking support.',
+        },
+      ],
+    },
+    {
+      id: "eligibility",
+      heading: "2. Eligibility",
+      blocks: [
+        {
+          type: "p",
+          text: "You must be at least 18 years old to use Besot. By using the App, you represent and warrant that you meet this age requirement. If you are under 18, you are not permitted to use this service.",
+        },
+      ],
+    },
+    {
+      id: "account-responsibility",
+      heading: "3. Account Responsibility",
+      blocks: [
+        {
+          type: "p",
+          text: "You are responsible for maintaining the confidentiality of your account credentials (nickname and PIN). You agree to accept responsibility for all activities that occur under your account. Besot is not responsible for any loss or damage arising from your failure to protect your account information.",
+        },
+      ],
+    },
+    {
+      id: "user-content",
+      heading: "4. User Content",
+      blocks: [
+        {
+          type: "p",
+          text: "You retain ownership of the content you post on Besot. By posting content, you grant Besot a non-exclusive, worldwide, royalty-free license to use, display, and distribute your content within the App. You are solely responsible for the content you post and must ensure it complies with our Community Guidelines.",
+        },
+      ],
+    },
+    {
+      id: "prohibited-conduct",
+      heading: "5. Prohibited Conduct",
+      blocks: [
+        { type: "lead", text: "You agree not to:" },
+        {
+          type: "list",
+          items: [
+            "Post content that violates our Community Guidelines",
+            "Harass, bully, or threaten other users",
+            "Share sexually explicit content involving minors",
+            "Promote violence, self-harm, or illegal activities",
+            "Impersonate others or misrepresent your affiliation",
+            "Attempt to circumvent security measures",
+            "Use the App for commercial purposes without authorization",
+            "Collect or harvest user data without consent",
+          ],
+        },
+      ],
+    },
+    {
+      id: "intellectual-property",
+      heading: "6. Intellectual Property",
+      blocks: [
+        {
+          type: "p",
+          text: "The Besot App, including its design, features, and content (excluding user-generated content), is owned by Besot and protected by intellectual property laws. You may not copy, modify, distribute, or create derivative works based on the App without explicit permission.",
+        },
+      ],
+    },
+    {
+      id: "privacy",
+      heading: "7. Privacy",
+      blocks: [
+        {
+          type: "p",
+          text: "Your privacy is important to us. Please review our Privacy Policy to understand how we collect, use, and protect your information. By using Besot, you consent to our data practices as described in the Privacy Policy.",
+        },
+      ],
+    },
+    {
+      id: "account-termination",
+      heading: "8. Account Termination",
+      blocks: [
+        {
+          type: "p",
+          text: "We reserve the right to suspend or terminate your account at any time for violations of these Terms or our Community Guidelines. You may also delete your account at any time through the App settings. Upon termination, your right to use the App will immediately cease.",
+        },
+      ],
+    },
+    {
+      id: "disclaimer-of-warranties",
+      heading: "9. Disclaimer of Warranties",
+      blocks: [
+        {
+          type: "p",
+          text: 'Besot is provided "as is" without warranties of any kind, express or implied. We do not guarantee that the App will be uninterrupted, secure, or error-free. We are not responsible for the accuracy, reliability, or quality of user-generated content.',
+        },
+      ],
+    },
+    {
+      id: "limitation-of-liability",
+      heading: "10. Limitation of Liability",
+      blocks: [
+        {
+          type: "p",
+          text: "To the maximum extent permitted by law, Besot shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use of or inability to use the App. Our total liability shall not exceed the amount you paid (if any) to use the service.",
+        },
+      ],
+    },
+    {
+      id: "changes-to-terms",
+      heading: "11. Changes to Terms",
+      blocks: [
+        {
+          type: "p",
+          text: "We may update these Terms from time to time. We will notify you of material changes by posting the new Terms in the App. Your continued use of Besot after changes are posted constitutes your acceptance of the modified Terms.",
+        },
+      ],
+    },
+    {
+      id: "contact-us",
+      heading: "12. Contact Us",
+      blocks: [
+        {
+          type: "p",
+          text: `If you have questions about these Terms of Service, please contact us at ${SUPPORT_EMAIL}`,
+        },
+      ],
+    },
+  ],
+}
+
+export const communityGuidelines: LegalDoc = {
+  slug: "community-guidelines",
+  title: "Community Guidelines",
+  summary:
+    "The standards that keep Besot a safe, respectful, and supportive space for everyone.",
+  sections: [
+    {
+      id: "welcome-to-our-community",
+      heading: "Welcome to Our Community",
+      blocks: [
+        {
+          type: "p",
+          text: "Besot is built on the foundation of respect, empathy, and support. These guidelines help maintain a safe and welcoming environment for everyone. By using Besot, you agree to follow these guidelines in all your interactions.",
+        },
+      ],
+    },
+    {
+      id: "treat-others-with-respect",
+      heading: "Treat Others with Respect",
+      blocks: [
+        {
+          type: "p",
+          text: "Every member deserves to be treated with dignity. Engage in constructive conversations, even when you disagree. Personal attacks, insults, or demeaning language are not tolerated. Remember that behind every post is a real person seeking understanding.",
+        },
+      ],
+    },
+    {
+      id: "prioritize-safety",
+      heading: "Prioritize Safety",
+      blocks: [
+        {
+          type: "p",
+          text: "If you or someone you know is in immediate danger, contact local emergency services. Do not share content that promotes self-harm, suicide, or violence. If you see concerning content, use the report feature immediately. Support resources are available in the App.",
+        },
+      ],
+    },
+    {
+      id: "be-authentic",
+      heading: "Be Authentic",
+      blocks: [
+        {
+          type: "p",
+          text: "Share genuine experiences and perspectives. Do not spread misinformation or create false narratives. While anonymity is protected, it should not be used to deceive or manipulate others. Authentic sharing builds trust within our community.",
+        },
+      ],
+    },
+    {
+      id: "respect-privacy",
+      heading: "Respect Privacy",
+      blocks: [
+        {
+          type: "p",
+          text: 'Do not share personal information about others without their consent. Respect the anonymity of fellow users. Do not attempt to identify, "dox," or reveal the identity of other users. Screenshot sharing of conversations outside the App is prohibited.',
+        },
+      ],
+    },
+    {
+      id: "legal-compliance",
+      heading: "Legal Compliance",
+      blocks: [
+        {
+          type: "p",
+          text: "Do not post content that violates local or international laws. This includes but is not limited to: illegal drug sales, weapons trafficking, fraud, or any criminal activity. We cooperate with law enforcement when legally required.",
+        },
+      ],
+    },
+    {
+      id: "prohibited-content",
+      heading: "Prohibited Content",
+      blocks: [
+        {
+          type: "list",
+          items: [
+            "Hate speech targeting race, ethnicity, religion, gender, sexual orientation, disability, or any protected characteristic",
+            "Sexually explicit content or sexual solicitation",
+            "Content depicting or promoting violence, gore, or graphic injuries",
+            "Harassment, bullying, or targeted abuse of individuals",
+            "Content promoting or glorifying self-harm or suicide",
+            "Spam, scams, or deceptive practices",
+            "Content involving the exploitation of minors in any form",
+            "Threats of violence or incitement to harm others",
+            "Misinformation that could cause real-world harm",
+          ],
+        },
+      ],
+    },
+    {
+      id: "reporting-violations",
+      heading: "Reporting Violations",
+      blocks: [
+        {
+          type: "p",
+          text: "If you encounter content that violates these guidelines, please report it using the report button (flag icon) on posts and comments. All reports are reviewed by our moderation team. False reporting to harass others is also a violation of these guidelines.",
+        },
+      ],
+    },
+    {
+      id: "enforcement",
+      heading: "Enforcement",
+      blocks: [
+        { type: "lead", text: "Violations of these guidelines may result in:" },
+        {
+          type: "list",
+          items: [
+            "Content removal",
+            "Warning notifications",
+            "Temporary account suspension",
+            "Permanent account termination",
+          ],
+        },
+        {
+          type: "p",
+          text: "The severity of enforcement depends on the nature and frequency of violations. We reserve the right to take action on any content or behavior that undermines the safety and integrity of our community.",
+        },
+      ],
+    },
+  ],
+}
+
+export const legalDocs: LegalDoc[] = [privacyPolicy, termsOfService, communityGuidelines]
+
+export function getDocBySlug(slug: string): LegalDoc | undefined {
+  return legalDocs.find((d) => d.slug === slug)
+}
