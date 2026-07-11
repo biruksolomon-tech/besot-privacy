@@ -5,8 +5,8 @@
 export const APP_NAME = "Besot"
 export const PUBLISHER = "DevCast Solutions"
 export const EFFECTIVE_DATE = "July 9, 2026"
-export const PRIVACY_EMAIL = "privacy@besot.app"
-export const SUPPORT_EMAIL = "support@besot.app"
+export const PRIVACY_EMAIL = "biruksolomonmoges@gmail.com"
+export const SUPPORT_EMAIL = "sDevCastSolutions@gmail.com"
 
 export type Block =
   | { type: "p"; text: string }

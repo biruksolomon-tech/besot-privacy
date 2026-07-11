@@ -32,6 +32,11 @@ export function SiteFooter() {
               </Link>
             </li>
             <li>
+              <Link href="/delete-account" className="text-muted-foreground hover:text-foreground">
+                Delete Account
+              </Link>
+            </li>
+            <li>
               <a
                 href={`mailto:${SUPPORT_EMAIL}`}
                 className="text-muted-foreground hover:text-foreground"
