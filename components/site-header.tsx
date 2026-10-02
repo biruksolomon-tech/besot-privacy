@@ -4,6 +4,7 @@ import { APP_NAME } from "@/lib/legal-content"
 
 const navItems = [
   { href: "/privacy-policy", label: "Privacy" },
+  { href: "/child-safety", label: "Child Safety" },
   { href: "/terms", label: "Terms" },
   { href: "/community-guidelines", label: "Guidelines" },
 ]

@@ -161,7 +161,29 @@ export const privacyPolicy: LegalDoc = {
       blocks: [
         {
           type: "p",
-          text: "Besot is not intended for users under 18 years of age. We do not knowingly collect personal information from children. If we discover that a child has provided us with personal information, we will delete such information from our systems immediately.",
+          text: "Besot is strictly for users aged 18 and older. We do not knowingly collect personal information from children under 18. If we discover that a user under 18 has created an account, we will delete it immediately.",
+        },
+      ],
+    },
+    {
+      id: "child-safety-standards",
+      heading: "Child Safety Standards & CSAE Policy",
+      blocks: [
+        {
+          type: "lead",
+          text: "Zero-Tolerance Policy for Child Sexual Abuse and Exploitation (CSAE):",
+        },
+        {
+          type: "p",
+          text: 'DevCast Solutions maintains a strict zero-tolerance policy against Child Sexual Abuse and Exploitation (CSAE) and Child Sexual Abuse Material (CSAM) on Besot. Users are strictly prohibited from creating, uploading, sharing, or transmitting any content that depicts, promotes, or facilitates child sexual abuse or exploitation.',
+        },
+        {
+          type: "p",
+          text: 'If CSAM or CSAE content is identified or reported, Besot takes immediate action: the content is permanently deleted, the authoring account is permanently banned, and the incident is reported to appropriate law enforcement authorities and the National Center for Missing & Exploited Children (NCMEC).',
+        },
+        {
+          type: "p",
+          text: `To report child safety concerns or policy violations directly to our Child Safety Officer, please email: ${PRIVACY_EMAIL}`,
         },
       ],
     },
@@ -438,8 +460,86 @@ export const communityGuidelines: LegalDoc = {
   ],
 }
 
-export const legalDocs: LegalDoc[] = [privacyPolicy, termsOfService, communityGuidelines]
+export const childSafetyPolicy: LegalDoc = {
+  slug: "child-safety",
+  title: "Child Safety Standards & CSAE Policy",
+  summary:
+    "Official Child Safety Standards for Besot, explicitly prohibiting Child Sexual Abuse and Exploitation (CSAE) and detailing reporting procedures.",
+  sections: [
+    {
+      id: "policy-statement",
+      heading: "Child Safety Statement",
+      blocks: [
+        {
+          type: "p",
+          text: 'DevCast Solutions ("we," "our," or "us"), developer of the Besot mobile application, is strictly committed to child safety and compliance with international child protection standards and Google Play Developer Policies.',
+        },
+        {
+          type: "lead",
+          text: "Zero-Tolerance for Child Exploitation:",
+        },
+        {
+          type: "p",
+          text: "We maintain a absolute zero-tolerance policy against Child Sexual Abuse and Exploitation (CSAE) and Child Sexual Abuse Material (CSAM). Any form of content depicting, facilitating, or encouraging child sexual abuse is strictly prohibited on Besot.",
+        },
+      ],
+    },
+    {
+      id: "prohibited-activities",
+      heading: "Prohibited Content & Activities",
+      blocks: [
+        {
+          type: "list",
+          items: [
+            "Child Sexual Abuse Material (CSAM) or any explicit media depicting minors",
+            "Grooming, solicitation, or attempted exploitation of minors",
+            "Sharing links or references to child exploitation material",
+            "Any content or communication that threatens or compromises the safety of children",
+          ],
+        },
+      ],
+    },
+    {
+      id: "reporting-mechanisms",
+      heading: "Reporting & Point of Contact",
+      blocks: [
+        {
+          type: "p",
+          text: "If you encounter any content, user behavior, or media on Besot that violates Child Safety Standards:",
+        },
+        {
+          type: "list",
+          items: [
+            "In-App Flagging: Use the report button directly on the post or comment for immediate moderator triage.",
+            `Direct Email Contact: Email our Child Safety Officer directly at ${PRIVACY_EMAIL} or ${SUPPORT_EMAIL}.`,
+          ],
+        },
+      ],
+    },
+    {
+      id: "enforcement-action",
+      heading: "Enforcement & Law Enforcement Escalation",
+      blocks: [
+        {
+          type: "p",
+          text: "Upon receiving a report involving potential CSAE or CSAM:",
+        },
+        {
+          type: "list",
+          items: [
+            "The flagged content is immediately hidden and removed from the platform.",
+            "The author's account and associated device identifier are permanently banned.",
+            "The incident and evidence are formally reported to the National Center for Missing & Exploited Children (NCMEC) and appropriate law enforcement authorities.",
+          ],
+        },
+      ],
+    },
+  ],
+}
+
+export const legalDocs: LegalDoc[] = [privacyPolicy, termsOfService, communityGuidelines, childSafetyPolicy]
 
 export function getDocBySlug(slug: string): LegalDoc | undefined {
   return legalDocs.find((d) => d.slug === slug)
 }
+

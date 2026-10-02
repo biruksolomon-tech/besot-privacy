@@ -19,6 +19,11 @@ export function SiteFooter() {
               </Link>
             </li>
             <li>
+              <Link href="/child-safety" className="text-muted-foreground hover:text-foreground">
+                Child Safety
+              </Link>
+            </li>
+            <li>
               <Link href="/terms" className="text-muted-foreground hover:text-foreground">
                 Terms of Service
               </Link>
